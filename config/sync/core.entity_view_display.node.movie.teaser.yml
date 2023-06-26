@@ -1,0 +1,61 @@
+uuid: 9abc1796-0ced-4729-8f44-91cdb7509863
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.movie.field_body
+    - field.field.node.movie.field_genre
+    - field.field.node.movie.field_image_poster
+    - field.field.node.movie.field_links
+    - field.field.node.movie.field_reviews
+    - image.style.medium
+    - node.type.movie
+  module:
+    - image
+    - link
+    - user
+id: node.movie.teaser
+targetEntityType: node
+bundle: movie
+mode: teaser
+content:
+  field_body:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image_poster:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_genre: true
+  field_reviews: true
+  search_api_excerpt: true
